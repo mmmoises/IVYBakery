@@ -1,0 +1,465 @@
+*{box-sizing: border-box;}
+
+body{
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #ffffff;
+}
+/*-----------Text -----------*/
+h1,h2,h3,h4,h5{
+  font-family: 'Playfair Display', serif;
+}
+
+.logo{
+  font-family: 'Playfair Display', serif;
+  font-size:  1.525rem ;
+}
+
+.white-text{
+  color: white !important;
+}
+
+.color-red{
+  color:#b9101c !important;
+}
+
+.color-gray{
+  color: #636363;
+}
+
+.color-black{
+  color: black !important;
+}
+
+.text-bold{
+  font-weight: bold;
+}
+
+.text-link-red-bold{
+  font-weight: bold;
+  color: #b9101c;
+}
+
+/*-------------Solid Navbar-----------------------------*/
+
+.solid-navbar{
+  position: relative;
+  width: 100% ;
+}
+.solid-nav-text{
+  font-weight: bold;
+  color: black !important;
+  padding-left: 25px !important;
+  padding-right: 25px !important;
+}
+
+.extra-solid-nav-text{
+  font-weight: bold;
+  color: black !important;
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+}
+
+/*-------------Navbar-----------------------------*/
+.bg-transparent-absolute{
+  position: absolute;
+  width: 100% ;
+}
+
+
+
+.nav-text{
+  font-weight: bold;
+  color: white !important;
+  padding-left: 25px !important;
+  padding-right: 25px !important;
+}
+
+.header-extras {
+  z-index: 199;
+
+  position: absolute;
+  right: 0;
+}
+
+.extra-nav-text{
+  font-weight: bold;
+  color: white !important;
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+}
+
+
+.dropdown-toggle::after {
+  display: none;
+}
+
+.badge-icon{
+  position: absolute;
+  bottom: 3px;
+  left: 16px;
+}
+
+.extra-dropdown-idiom{
+  left: -95px;
+}
+
+.extra-dropdown-country{
+  left: -100px;
+}
+
+.extra-dropdown-shopping-bag{
+  left: -150px;
+}
+
+/*----------custom-breadcrumb-----------*/
+.custom-breadcrumb{
+  background-color: #f7f7f7;
+}
+
+#breadcrumb1::before,#breadcrumb2::before {
+  content: none; 
+}
+
+/*----------------Video Background -----------*/
+.video-background-holder {
+  z-index: -99;
+  position: relative;
+  top:0 ;
+  left: 0;
+  background-color: black;
+  height: 100vh;
+  min-height: 25rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+.video-background-holder video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 0;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.video-background-content {
+  position: relative;
+  z-index: 2;
+}
+
+.video-background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+/*---------------sction title-----------------*/
+
+.section-title{
+  position: relative;
+  height: 250px;
+}
+
+.collage-title{
+  position: absolute;
+  width: 100%;
+}
+
+
+
+
+
+/*----------------section------------------*/
+
+.section{
+  position: relative;
+  max-width: 100%;
+  display: grid;
+  /*grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));*/
+  grid-template-columns: 23% 23% 23% 23%;
+  grid-template-rows: 350px 350px 350px 350px;
+  grid-auto-flow: dense;
+  grid-gap: 2%;
+}
+
+.section .box{
+  background: blue;
+  padding: 20px;
+  display: grid;
+  text-align: center;
+
+}
+
+.section .box .content{
+  position: relative;
+}
+
+/*-------------------------Lean yeast bread---------------------*/
+.section .box:nth-child(1){
+  grid-column: span 2;
+  grid-row: span 2;
+  background-image: url('../image/yeast-bread.jpg');
+  background-size:cover;
+  box-shadow:inset 0 0 0 2000px rgba(0, 0, 0, 0.384);
+}
+
+
+.text-left-bottom{
+  position: absolute;
+  bottom: 20%;
+  left: 4%;
+  color: white;
+}
+
+.text-left-bottom-link{
+  position: absolute;
+  bottom: 5%;
+  left: 4%;
+}
+
+/*-------------------------Cabernet Sauvignon---------------------*/
+.section .box:nth-child(2){
+  grid-column: span 2;
+  grid-row: span 1;
+  background-image: url('../image/Cabernet-sauvignon.jpg');
+  background-size:cover;
+  box-shadow:inset 0 0 0 2000px rgba(0, 0, 0, 0.384);
+}
+
+
+
+/*-------------------------white---------------------*/
+
+.section .box:nth-child(3){
+  grid-column: span 1;
+  grid-row: span 1;
+  background-color: transparent;
+}
+
+
+
+/*-------------------------Event---------------------*/
+.section .box:nth-child(4){
+  grid-column: span 1;
+  grid-row: span 2;
+  bottom: 30%;
+  background-image: url('../image/event.jpg');
+  background-size:cover;
+  box-shadow:inset 0 0 0 2000px rgba(0, 0, 0, 0.384);
+}
+.number-event{
+  position: absolute;
+  top: 15%
+}
+
+
+
+
+
+/*-------------------------Butter Cake---------------------*/
+.section .box:nth-child(5){
+  grid-column: span 1;
+  grid-row: span 1;
+  background-image: url('../image/butter-cake.jpg');
+  background-size:cover;
+  box-shadow:inset 0 0 0 2000px rgba(0, 0, 0, 0.384);
+}
+
+.non-radius{
+  border-radius: 0;
+}
+
+.button-red{
+  border-radius: 0;
+  color: white;
+  background-color: #b9101c;
+}
+
+.text-butter{
+  position: absolute;
+  left:0;
+  right:0;
+  margin-left: auto;
+  margin-right: auto;
+  bottom: 60%;
+}
+
+.btn-custom-lg {
+  border-radius: 0;
+  position: absolute;
+  color: white;
+  background-color: #b9101c;
+  bottom: 30%;
+  left:0;
+  right:0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 150px;
+}
+
+/*-------------------------Newsletter---------------------*/
+
+.section .box:nth-child(6){
+  grid-column: span 2;
+  grid-row: span 1;
+  background-image: url('../image/newsletter.jpg');
+  background-size:cover;
+  box-shadow:inset 0 0 0 2000px rgba(0, 0, 0, 0.384);
+}
+.form-subscribe{
+  
+  position: absolute !important;
+  left:0;
+  right:0;
+  margin-left: auto;
+  margin-right: auto;
+  bottom: 30%;
+  width: 70%;
+}
+
+/*-------------------------Map---------------------*/
+.section .box:nth-child(7){
+  grid-column: span 2;
+  grid-row: span 1;
+  background-image: url('../image/map.jpg');
+  background-size:cover;
+  box-shadow:inset 0 0 0 2000px rgba(0, 0, 0, 0.384);
+}
+
+.center-card{
+  position: absolute;
+  left:0;
+  right:0;
+  margin: auto;
+  bottom: 0;
+  top: 0;
+  width: 50%;
+  height: 90%;
+  
+}
+
+/*-------------------------Clients---------------------*/
+
+.section .box:nth-child(8){
+  grid-column: span 2;
+  grid-row: span 1;
+  background-image: url('../image/clients.jpg');
+  background-size:cover;
+  box-shadow:inset 0 0 0 2000px rgba(0, 0, 0, 0.384);
+}
+/*-------------section Logos--------*/
+
+.section-logos{
+  min-height: 100px;
+  position: relative;
+  margin-top: 140px;
+  margin-left: 45px;
+  margin-right: 45px;
+}
+
+
+
+
+
+/*-----------product description------------*/
+
+.pading-section{
+  margin-top: 120px;
+}
+
+.principal-image{
+  position: relative;
+  width: 100%;
+}
+
+
+.product-description{
+  position: relative;
+}
+
+.ranking {
+  color: #f5c136;
+}
+
+.price{
+  color: #b9101c;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bolder;
+}
+
+.list{
+  position: relative;
+  margin-top: 50px;
+}
+
+.list-item{
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.nav-pills .nav-link.active{
+  background-color: transparent;
+  font-weight: bolder;
+  color: black;
+}
+
+.inter{
+  border-color: #636363 !important;
+}
+.nav-secondary{
+  color: #636363;
+}
+
+/*----------------------------CheckOut-----------------*/
+
+.custom-input{
+  border-radius: 0;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
+.card-header{
+  background-color: transparent;
+}
+
+.order-button{
+  width: 56%;
+}
+/*-------------Footer------------*/
+
+.footer{
+  position: relative;
+  background-color: #c2c2c2;
+  margin-top: 100px;
+}
+
+.footer-secondary{
+  position: relative;
+  background-color: #f7f7f7;
+  margin-top: 100px;
+}
+
+.footer-container{
+  padding-top: 45px;
+  margin-left: 47px;
+  margin-right: 45px;
+  padding-bottom: 20px;
+}
+
+.footer-link{
+  color: black !important;
+  font-weight: bolder;
+}
