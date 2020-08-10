@@ -37,6 +37,20 @@
             <div class="card non-radius">
                 <div class="card-body">
                     <form>
+                        
+                          <div class="form-group row">
+                            <label for="inputPassword" class="col-sm-3 col-form-label text-bold color-gray">COUNTRY*</label>
+                            <div class="col-sm-9">
+                                <select class="form-control custom-input" id="exampleFormControlSelect2">
+                                    <option></option>
+                                    <option>Option 1</option>
+                                    <option>Option 2</option>
+                                    <option>Option 3</option>
+                                    <option>Option 4</option>
+                                </select>
+                            </div>
+                          </div>
+
                         <div class="form-group row">
                           <label for="inputPassword" class="col-sm-3 col-form-label text-bold color-gray">FIRST NAME*</label>
                           <div class="col-sm-9">
