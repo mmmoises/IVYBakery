@@ -1,5 +1,5 @@
 <p align="center"><img src="http://lumationservices.com/images/lumation-logo-2.png" width="400"></p>
-#Code Challenge - Lumation 
+##Code Challenge - Lumation 
 
 This project is a frontend layout test starting from .PSD files. 
 Reactive functionalities were also implemented to the shopping cart.
