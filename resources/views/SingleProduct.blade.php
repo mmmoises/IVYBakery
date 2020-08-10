@@ -76,22 +76,24 @@
                     Aenean ultricies mi vitae est. Mauris placerat eleifend leo.
                 </p>
 
-                <div class="row mt-5">
+                {{--<div class="row mt-5">
                     <div class="col-3">
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
-                              <button class="btn btn-outline-secondary" type="button">-</button>
+                              <button class="btn btn-outline-secondary border-0" type="button"><i class="fa fa-minus-circle" aria-hidden="true"></i></button>
                             </div>
-                            <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
+                            <input type="number" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
                             <div class="input-group-append">
-                                <button class="btn btn-outline-secondary" type="button">+</button>
+                                <button class="btn btn-outline-secondary border-0" type="button"><i class="fa fa-plus-circle" aria-hidden="true"></i></button>
                             </div>
                         </div>
                     </div>
                     <div class="col-5">
                         <a class="btn btn-default btn-lg button-red" href="{{route('single.product')}}">ADD TO CART</a>
                     </div>
-                </div>
+                </div>--}}
+
+                <single-product-component></single-product-component>
 
                 <div class="list">
                     <p class="list-item text-secondary text-bold">Categories: <span class="color-black">Beef Steak </span></p>
