@@ -49,6 +49,15 @@ export default {
         };
     },
 
+    mounted(){
+
+        axios.get("/api-init").then(response => {
+            console.log(response.data);
+            this.list = response.data;
+        });
+
+    },
+
     created(){
         this.$root.$on('addCart',data =>{
 
@@ -98,6 +107,10 @@ export default {
         remove: function(item) {
             this.list.splice(this.list.indexOf(item), 1);
             //remove one element starting from the element 'item'
+
+            axios.get("/api-remove?id="+item.id).then(response => {
+                console.log(response.data);
+            });
         },
 
         subtotal: function(item){

@@ -46,8 +46,20 @@ export default {
                     quantity: this.quantity
                 };
 
-                this.quantity =1;
-                this.$root.$emit('addCart',params);
+
+                axios.post('/api-store', params)
+                .then((response) => {
+                    console.log(response.data);
+                    const params = {
+                        id:  this.id,
+                        name: this.name,
+                        price: this.price,
+                        quantity: this.quantity
+                    };
+                    //miniToastr.success('listo');
+                    this.quantity =1;
+                    this.$root.$emit('addCart',params);
+                });
 
        }
 

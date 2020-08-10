@@ -177,26 +177,22 @@
                           </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <th class="color-gray text-bold border-top-0">Product 1</th>
-                                <td class="color-gray border-top-0 text-right">$ 25.00</td>  
-                            </tr>
-                            <tr>
-                                <th class="color-gray text-bold">Product 1</th>
-                                <td class="color-gray text-right">$ 25.00</td>  
-                            </tr>
-                            <tr>
-                                <th class="color-gray text-bold">Product 1</th>
-                                <td class="color-gray text-right">$ 25.00</td>  
-                            </tr>
-                            <tr>
-                                <th class="color-gray text-bold">Shipping and Handling</th>
-                                <td class="color-gray text-right">Free Shipping</td>  
-                            </tr>
+                            @php
+                                $total=0;
+                            @endphp
+                            @foreach ($items as $item)    
+                                <tr>
+                                    <th class="color-gray text-bold border-top-0">{{$item['name']}}</th>
+                                    <td class="color-gray border-top-0 text-right">$ {{$item['price'] * $item['quantity']}}</td> 
+                                    @php
+                                        $total+=$item['price'] * $item['quantity'];
+                                    @endphp 
+                                </tr>
+                            @endforeach
 
                             <tr>
                                 <th >ORDER TOTAL</th>
-                                <td class="color-red text-right">$ 25.00</td>  
+                                <th class="color-gray border-top-0 text-right" >$ {{$total}}</th>
                             </tr>
                         </tbody>
                       </table>

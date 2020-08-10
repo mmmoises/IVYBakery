@@ -14,8 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'PageController@index')->name('home');
-
 Route::get('/product', 'PageController@product')->name('single.product');
-
 Route::get('/checkout', 'PageController@checkout')->name('checkout');
+
+/*Vue apis*/
+
+Route::post('/api-store','ShoppingCartController@store');
+Route::get('/api-init','ShoppingCartController@init');
+Route::get('/api-remove','ShoppingCartController@remove');
 

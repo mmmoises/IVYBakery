@@ -16,6 +16,9 @@ class PageController extends Controller
     }
 
     public function checkout(){
-        return view('checkout');
+        $items= session('items', []);
+        //$items=$items_session[0];
+        //dd($items);
+        return view('checkout',compact('items'));
     }
 }

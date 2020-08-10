@@ -20,7 +20,7 @@
                     <tr v-for="item in list" :key="item.id">
                         <td>{{item.name}}</td>
                         <td>{{item.quantity}}</td>
-                        <td>{{subtotal(item)}}</td>
+                        <td> {{subtotal(item)}}</td>
                         <td><button class="btn border-0" @click.prevent="remove(item)"> <i class="fa fa-times-circle" aria-hidden="true"></i></button></td>
                     </tr>
                     <tr>
@@ -47,6 +47,15 @@ export default {
                 {id:2, name: "yeast bread", price:234, quantity:3}
             ]
         };
+    },
+
+    mounted(){
+
+        axios.get("/api-init").then(response => {
+            console.log(response.data);
+            this.list = response.data;
+        });
+
     },
 
     created(){
@@ -98,6 +107,10 @@ export default {
         remove: function(item) {
             this.list.splice(this.list.indexOf(item), 1);
             //remove one element starting from the element 'item'
+
+            axios.get("/api-remove?id="+item.id).then(response => {
+                console.log(response.data);
+            });
         },
 
         subtotal: function(item){

@@ -12,22 +12,22 @@
         <div class="collapse navbar-collapse justify-content-md-center" id="navbarPrimary">
           <ul class="navbar-nav">
             <li class="nav-item active">
-              <a class="nav-link nav-text" href="#">HOME</a>
+              <a class="nav-link nav-text" href="{{route('home')}}">HOME</a>
             </li>
             <li class="nav-item ">
-              <a class="nav-link nav-text" href="#">MENU</a>
+              <a class="nav-link nav-text" href="{{route('single.product')}}">MENU</a>
             </li>
             <li class="nav-item ">
-                <a class="nav-link nav-text" href="#">RESERVATION</a>
+                <a class="nav-link nav-text" href="{{route('single.product')}}">RESERVATION</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link nav-text" href="#">PAGE</a>
+                <a class="nav-link nav-text" href="{{route('home')}}">PAGE</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link nav-text" href="#">BLOG</a>
+                <a class="nav-link nav-text" href="{{route('home')}}">BLOG</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link nav-text" href="#">CONTACT</a>
+                <a class="nav-link nav-text" href="{{route('home')}}">CONTACT</a>
             </li>
           </ul>
 

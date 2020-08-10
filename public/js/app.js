@@ -1997,16 +1997,24 @@ __webpack_require__.r(__webpack_exports__);
       }]
     };
   },
-  created: function created() {
+  mounted: function mounted() {
     var _this = this;
 
+    axios.get("/api-init").then(function (response) {
+      console.log(response.data);
+      _this.list = response.data;
+    });
+  },
+  created: function created() {
+    var _this2 = this;
+
     this.$root.$on('addCart', function (data) {
-      var found = _this.list.findIndex(function (element) {
+      var found = _this2.list.findIndex(function (element) {
         return element.id == data.id;
       });
 
       if (found >= 0) {
-        _this.list[found].quantity = _this.list[found].quantity + data.quantity; //this.cart.total =  parseInt(this.cart.total) + this.getSubPriceN(data.product.id, data.quantity) ;
+        _this2.list[found].quantity = _this2.list[found].quantity + data.quantity; //this.cart.total =  parseInt(this.cart.total) + this.getSubPriceN(data.product.id, data.quantity) ;
         //this.cart.total = newSubtotal ;
       } else {
         //this.products.push(data.product);
@@ -2018,7 +2026,7 @@ __webpack_require__.r(__webpack_exports__);
           quantity: data.quantity
         };
 
-        _this.list.push(params);
+        _this2.list.push(params);
       } //this.cart.noItems = this.cart.noItems + data.quantity;
       //notifier.notify("success", "Successfully logged in!");
 
@@ -2043,6 +2051,10 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     remove: function remove(item) {
       this.list.splice(this.list.indexOf(item), 1); //remove one element starting from the element 'item'
+
+      axios.get("/api-remove?id=" + item.id).then(function (response) {
+        console.log(response.data);
+      });
     },
     subtotal: function subtotal(item) {
       return item.price * item.quantity;
@@ -2099,14 +2111,27 @@ __webpack_require__.r(__webpack_exports__);
       }
     },
     addProduct: function addProduct() {
+      var _this = this;
+
       var params = {
         id: this.id,
         name: this.name,
         price: this.price,
         quantity: this.quantity
       };
-      this.quantity = 1;
-      this.$root.$emit('addCart', params);
+      axios.post('/api-store', params).then(function (response) {
+        console.log(response.data);
+        var params = {
+          id: _this.id,
+          name: _this.name,
+          price: _this.price,
+          quantity: _this.quantity
+        }; //miniToastr.success('listo');
+
+        _this.quantity = 1;
+
+        _this.$root.$emit('addCart', params);
+      });
     }
   }
 });
@@ -2178,16 +2203,24 @@ __webpack_require__.r(__webpack_exports__);
       }]
     };
   },
-  created: function created() {
+  mounted: function mounted() {
     var _this = this;
 
+    axios.get("/api-init").then(function (response) {
+      console.log(response.data);
+      _this.list = response.data;
+    });
+  },
+  created: function created() {
+    var _this2 = this;
+
     this.$root.$on('addCart', function (data) {
-      var found = _this.list.findIndex(function (element) {
+      var found = _this2.list.findIndex(function (element) {
         return element.id == data.id;
       });
 
       if (found >= 0) {
-        _this.list[found].quantity = _this.list[found].quantity + data.quantity; //this.cart.total =  parseInt(this.cart.total) + this.getSubPriceN(data.product.id, data.quantity) ;
+        _this2.list[found].quantity = _this2.list[found].quantity + data.quantity; //this.cart.total =  parseInt(this.cart.total) + this.getSubPriceN(data.product.id, data.quantity) ;
         //this.cart.total = newSubtotal ;
       } else {
         //this.products.push(data.product);
@@ -2199,7 +2232,7 @@ __webpack_require__.r(__webpack_exports__);
           quantity: data.quantity
         };
 
-        _this.list.push(params);
+        _this2.list.push(params);
       } //this.cart.noItems = this.cart.noItems + data.quantity;
       //notifier.notify("success", "Successfully logged in!");
 
@@ -2224,6 +2257,10 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     remove: function remove(item) {
       this.list.splice(this.list.indexOf(item), 1); //remove one element starting from the element 'item'
+
+      axios.get("/api-remove?id=" + item.id).then(function (response) {
+        console.log(response.data);
+      });
     },
     subtotal: function subtotal(item) {
       return item.price * item.quantity;
@@ -37629,7 +37666,7 @@ var render = function() {
                   _vm._v(" "),
                   _c("td", [_vm._v(_vm._s(item.quantity))]),
                   _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(_vm.subtotal(item)))]),
+                  _c("td", [_vm._v(" " + _vm._s(_vm.subtotal(item)))]),
                   _vm._v(" "),
                   _c("td", [
                     _c(
